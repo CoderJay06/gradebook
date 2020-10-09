@@ -14,7 +14,22 @@ namespace GradeBook
                 Console.Write("Please enter a grade (q to quit) >> ");
                 userInput = Console.ReadLine();
                 if (userInput != "q")
-                    book.AddGrade(Convert.ToDouble(userInput));
+                    try
+                    {
+                        book.AddGrade(Convert.ToDouble(userInput));
+                    }
+                    catch(ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    catch(FormatException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    finally
+                    {
+                        Console.WriteLine("**");
+                    }
             } while (userInput != "q");
             
 
