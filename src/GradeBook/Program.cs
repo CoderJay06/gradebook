@@ -8,9 +8,15 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("Jay's Grade Book");
-            book.AddGrade(89.1);
-            book.AddGrade(90.5);
-            book.AddGrade(77.5);
+            var userInput = "";
+            do
+            {
+                Console.Write("Please enter a grade (q to quit) >> ");
+                userInput = Console.ReadLine();
+                if (userInput != "q")
+                    book.AddGrade(Convert.ToDouble(userInput));
+            } while (userInput != "q");
+            
 
             var stats = book.GetStatistics();
             Console.WriteLine($"Highest grade: {stats.Low}");
