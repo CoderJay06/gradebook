@@ -28,12 +28,15 @@ namespace GradeBook
                     }
                     finally
                     {
-                        Console.WriteLine("**");
+                        Console.WriteLine("");
                     }
             } while (userInput != "q");
             
 
             var stats = book.GetStatistics();
+
+            Console.WriteLine(Book.CATEGORY);
+            Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"Highest grade: {stats.Low}");
             Console.WriteLine($"Lowest grade: {stats.High}");
             Console.WriteLine($"Average grade: {stats.Average:N1}");
