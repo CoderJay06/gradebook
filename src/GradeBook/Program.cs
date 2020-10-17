@@ -22,7 +22,7 @@ namespace GradeBook
          Console.WriteLine($"The letter is {stats.Letter}");
       }
 
-      private static void EnterGrades(Book book)
+      private static void EnterGrades(IBook book)
       {
          var userInput = "";
          do
